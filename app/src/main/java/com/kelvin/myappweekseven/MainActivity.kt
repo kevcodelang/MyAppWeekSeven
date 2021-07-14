@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         }
         viewModel.run{
             getUsers()
-            usersLiveData.observe(this@MainActivity, {
+            usersLiveData.observe(this@MainActivity, { users ->
                 userAdapter.users=users
                 userAdapter.notifyDataSetChanged()
             })

@@ -9,11 +9,11 @@ import com.kelvin.myappweekseven.models.User
 class UserAdapter(var users: List<User>) : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
     class UserViewHolder(private val binding: UserItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bindUser(user: User) {
+        fun bindUser(users: User) {
             binding.apply {
-//    nameDisplay.text=user.name
-//    nameDisplay.text=user.name
-//    nameDisplay.text=user.name
+    textName.text=users.name
+    textEmail.text=users.email
+    textStreet.text=users.address.street
             }
 
         }
@@ -21,7 +21,7 @@ class UserAdapter(var users: List<User>) : RecyclerView.Adapter<UserAdapter.User
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
-        var binding = UserItemBinding.inflate(LayoutInflater.from(parent.context))
+        val binding = UserItemBinding.inflate(LayoutInflater.from(parent.context))
         return UserViewHolder(binding)
     }
 
